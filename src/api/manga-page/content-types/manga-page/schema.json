@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manga_pages",
+  "info": {
+    "singularName": "manga-page",
+    "pluralName": "manga-pages",
+    "displayName": "manga_page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::manga-chapter.manga-chapter",
+      "inversedBy": "pages"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

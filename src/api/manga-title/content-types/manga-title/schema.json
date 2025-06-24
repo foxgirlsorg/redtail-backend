@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manga_titles",
+  "info": {
+    "singularName": "manga-title",
+    "pluralName": "manga-titles",
+    "displayName": "manga_title"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "release_year": {
+      "type": "integer"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "manga_titles"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "backdrop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "chapters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::manga-chapter.manga-chapter",
+      "mappedBy": "title"
+    },
+    "release_status": {
+      "type": "enumeration",
+      "enum": [
+        "Онгоинг",
+        "Завершён",
+        "Анонс",
+        "Приостановлен",
+        "Заброшен",
+        "Закончен"
+      ]
+    },
+    "mangalib_url": {
+      "type": "string"
+    },
+    "remanga_url": {
+      "type": "string"
+    },
+    "readmanga_url": {
+      "type": "string"
+    },
+    "hidden": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "author"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "urls": {
+      "type": "json"
+    },
+    "manga_titles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::manga-title.manga-title",
+      "mappedBy": "authors"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
