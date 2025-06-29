@@ -4,7 +4,7 @@
   "info": {
     "singularName": "manga-chapter",
     "pluralName": "manga-chapters",
-    "displayName": "manga_chapter"
+    "displayName": "Manga Chapters"
   },
   "options": {
     "draftAndPublish": true

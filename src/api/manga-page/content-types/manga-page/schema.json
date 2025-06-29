@@ -4,7 +4,7 @@
   "info": {
     "singularName": "manga-page",
     "pluralName": "manga-pages",
-    "displayName": "manga_page"
+    "displayName": "Manga Pages"
   },
   "options": {
     "draftAndPublish": true
@@ -20,9 +20,7 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "chapter": {

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "team-member",
     "pluralName": "team-members",
-    "displayName": "team_member"
+    "displayName": "Team Members"
   },
   "options": {
     "draftAndPublish": true
@@ -22,9 +22,7 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "telegram_url": {
@@ -36,6 +34,12 @@
     "hidden": {
       "type": "boolean",
       "default": false
+    },
+    "manga_titles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::manga-title.manga-title",
+      "mappedBy": "members_worked_ons"
     }
   }
 }

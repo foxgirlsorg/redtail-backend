@@ -4,7 +4,7 @@
   "info": {
     "singularName": "manga-title",
     "pluralName": "manga-titles",
-    "displayName": "manga_title"
+    "displayName": "Manga Titles"
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "text"
@@ -29,11 +30,10 @@
     "cover": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "backdrop": {
@@ -41,9 +41,7 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "chapters": {
@@ -54,6 +52,7 @@
     },
     "release_status": {
       "type": "enumeration",
+      "required": true,
       "enum": [
         "Онгоинг",
         "Завершён",
@@ -64,18 +63,36 @@
       ]
     },
     "mangalib_url": {
-      "type": "string"
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)"
     },
     "remanga_url": {
-      "type": "string"
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)"
     },
     "readmanga_url": {
-      "type": "string"
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)"
     },
     "hidden": {
       "type": "boolean",
       "required": false,
       "default": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "alternative_names": {
+      "type": "string"
+    },
+    "members_worked_ons": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team-member.team-member",
+      "inversedBy": "manga_titles"
     }
   }
 }

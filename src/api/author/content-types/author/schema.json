@@ -4,7 +4,7 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "author"
+    "displayName": "Authors"
   },
   "options": {
     "draftAndPublish": true
@@ -22,9 +22,7 @@
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "urls": {
