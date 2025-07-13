@@ -1,4 +1,5 @@
-version: '3'
+version: '3.8'
+
 services:
   foxgirlsorg-manga:
     container_name: foxgirlsorg-manga
@@ -12,16 +13,15 @@ services:
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       NODE_ENV: ${NODE_ENV}
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
       - ./package.json:/opt/package.json
       - ./yarn.lock:/opt/yarn.lock
-
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
     ports:
@@ -30,13 +30,13 @@ services:
       - foxgirlsorg-manga
     depends_on:
       - foxgirlsorg-mangaDB
-      
+
   foxgirlsorg-mangaDB:
     container_name: foxgirlsorg-mangaDB
-    platform: linux/amd64 #for platform error on Apple M1 chips
+    platform: linux/amd64
+    image: mariadb:latest
     restart: unless-stopped
     env_file: .env
-    image: mariadb:latest
     environment:
       MYSQL_USER: ${DATABASE_USERNAME}
       MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
@@ -45,27 +45,37 @@ services:
       MYSQL_ROOT_HOST: '%'
     volumes:
       - foxgirlsorg-manga-data:/var/lib/mysql
-      - ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+      - ./data:/var/lib/postgresql/data/
+      - ./db-init:/docker-entrypoint-initdb.d
     ports:
       - '3306:3306'
     networks:
       - foxgirlsorg-manga
-      
- # foxgirlsorg-mangaAdminer:
-  #  container_name: foxgirlsorg-mangaAdminer
-   # image: adminer
-   # restart: unless-stopped
-   # ports:
-   #   - '1338:8080'
-   # environment:
-   #   - ADMINER_DEFAULT_SERVER=foxgirlsorg-mangaDB
-   # networks:
-   #   - foxgirlsorg-manga
-   # depends_on:
-   #   - foxgirlsorg-mangaDB
+
+  cusdis:
+    container_name: cusdis
+    image: djyde/cusdis
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DB_URL: mysql://${CUSDIS_DATABASE_USERNAME}:${CUSDIS_DATABASE_PASSWORD}@foxgirlsorg-mangaDB:3306/${CUSDIS_DATABASE_NAME}
+      DB_TYPE: mysql
+      USERNAME: ${CUSDIS_ADMIN_USERNAME}
+      PASSWORD: ${CUSDIS_ADMIN_PASSWORD}
+      JWT_SECRET: ${CUSDIS_JWT_SECRET}
+      NEXTAUTH_URL: ${CUSDIS_NEXTAUTH_URL}
+    ports:
+      - '1338:3000'
+    volumes:
+      - cusdis-data:/data
+    networks:
+      - foxgirlsorg-manga
+    depends_on:
+      - foxgirlsorg-mangaDB
 
 volumes:
   foxgirlsorg-manga-data:
+  cusdis-data:
 
 networks:
   foxgirlsorg-manga:
