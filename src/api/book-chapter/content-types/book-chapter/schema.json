@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "book_chapters",
+  "info": {
+    "singularName": "book-chapter",
+    "pluralName": "book-chapters",
+    "displayName": "Book chapters"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "title": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book-title.book-title",
+      "inversedBy": "chapters"
+    },
+    "hidden": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

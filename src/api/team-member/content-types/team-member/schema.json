@@ -46,6 +46,12 @@
       "relation": "manyToMany",
       "target": "api::article.article",
       "mappedBy": "members_worked_on"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::book-title.book-title",
+      "mappedBy": "members_worked_on"
     }
   }
 }

@@ -49,6 +49,12 @@
       "relation": "manyToMany",
       "target": "api::article.article",
       "mappedBy": "related_authors"
+    },
+    "book_titles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::book-title.book-title",
+      "inversedBy": "authors"
     }
   }
 }
