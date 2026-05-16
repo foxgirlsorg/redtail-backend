@@ -1,0 +1,18 @@
+module.exports = ({ env }) => ({
+  comments: {
+    enabled: true,
+    config: {
+      badWords: false,
+      moderatorRoles: ['strapi-super-admin'],
+      entryLabel: {
+        "*": ["Title", "title", "Name", "name", "Subject", "subject"],
+      },
+      blockedAuthorProps: ["name", "email"],
+      reportReasons: {
+        MY_CUSTOM_REASON: "MY_CUSTOM_REASON",
+      },
+      gql: {
+      },
+    },
+  },
+});
