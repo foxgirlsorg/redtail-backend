@@ -52,30 +52,8 @@ services:
     networks:
       - foxgirlsorg-manga
 
-  cusdis:
-    container_name: cusdis
-    image: djyde/cusdis
-    restart: unless-stopped
-    env_file: .env
-    environment:
-      DB_URL: mysql://${CUSDIS_DATABASE_USERNAME}:${CUSDIS_DATABASE_PASSWORD}@foxgirlsorg-mangaDB:3306/${CUSDIS_DATABASE_NAME}
-      DB_TYPE: mysql
-      USERNAME: ${CUSDIS_ADMIN_USERNAME}
-      PASSWORD: ${CUSDIS_ADMIN_PASSWORD}
-      JWT_SECRET: ${CUSDIS_JWT_SECRET}
-      NEXTAUTH_URL: ${CUSDIS_NEXTAUTH_URL}
-    ports:
-      - '1338:3000'
-    volumes:
-      - cusdis-data:/data
-    networks:
-      - foxgirlsorg-manga
-    depends_on:
-      - foxgirlsorg-mangaDB
-
 volumes:
   foxgirlsorg-manga-data:
-  cusdis-data:
 
 networks:
   foxgirlsorg-manga:
