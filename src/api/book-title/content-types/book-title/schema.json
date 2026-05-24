@@ -92,6 +92,12 @@
         "Ранобэ",
         "Рассказ"
       ]
+    },
+    "book_files": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::book-files.book-files",
+      "mappedBy": "book_title"
     }
   }
 }

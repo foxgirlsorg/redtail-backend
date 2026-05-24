@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookfiles",
+  "info": {
+    "singularName": "book-files",
+    "pluralName": "bookfiles",
+    "displayName": "Book Files"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "book_title": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book-title.book-title",
+      "inversedBy": "book_files"
+    },
+    "file_type": {
+      "type": "string",
+      "required": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "hidden": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
