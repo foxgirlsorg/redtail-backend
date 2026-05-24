@@ -52,6 +52,14 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "card_bg": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   }
 }
