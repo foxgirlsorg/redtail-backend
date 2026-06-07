@@ -17,11 +17,14 @@
   "dependencies": {
     "@strapi/plugin-cloud": "5.46.0",
     "@strapi/plugin-users-permissions": "5.46.0",
+    "@strapi/provider-email-nodemailer": "^5.47.1",
     "@strapi/strapi": "5.46.0",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-plugin-comments": "^3.2.4",
+    "strapi-plugin-config-sync": "^3.2.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
