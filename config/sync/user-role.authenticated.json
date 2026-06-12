@@ -1,0 +1,154 @@
+{
+  "documentId": "yt7r9eauesyyqg1vl2f5hre2",
+  "name": "Authenticated",
+  "description": "Default role given to authenticated user.",
+  "type": "authenticated",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "pzpwerrwt64b86s766w69sop",
+      "action": "api::article.article.find",
+      "locale": null
+    },
+    {
+      "documentId": "antk78tmvcgm2bom7pk4at29",
+      "action": "api::article.article.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "xjbkinzavsza2uqp5bwvrpht",
+      "action": "api::author.author.find",
+      "locale": null
+    },
+    {
+      "documentId": "s7szv2ds3tj8wf9j81rsos5h",
+      "action": "api::author.author.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "k2oulh1ldvo782szaluzb6qk",
+      "action": "api::book-chapter.book-chapter.find",
+      "locale": null
+    },
+    {
+      "documentId": "k9r7yyi6y8oy9pw93tvo6qms",
+      "action": "api::book-chapter.book-chapter.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "fexdq1ppij19ao83ie1g12am",
+      "action": "api::book-files.book-files.find",
+      "locale": null
+    },
+    {
+      "documentId": "rai6e39o31mxt801qsjsk12b",
+      "action": "api::book-title.book-title.find",
+      "locale": null
+    },
+    {
+      "documentId": "jazvuj2ztlv8qeu64qiktg36",
+      "action": "api::book-title.book-title.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "y6cdgmfdut2rj8wsnisbqgzd",
+      "action": "api::footer.footer.find",
+      "locale": null
+    },
+    {
+      "documentId": "b96683k6nizzghi8nzdiks7a",
+      "action": "api::manga-chapter.manga-chapter.find",
+      "locale": null
+    },
+    {
+      "documentId": "ixfbxzboufwu3glkolonwkmb",
+      "action": "api::manga-chapter.manga-chapter.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "qsvvi0sjfd8a7d3to99ej11y",
+      "action": "api::manga-page.manga-page.find",
+      "locale": null
+    },
+    {
+      "documentId": "n3e4ag0tlqmiyfjvb85prvp6",
+      "action": "api::manga-page.manga-page.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "mrql4zldyyj7gwbx27o0f1q4",
+      "action": "api::manga-title.manga-title.find",
+      "locale": null
+    },
+    {
+      "documentId": "df32zhv0u2y6b81nwhbbi6kj",
+      "action": "api::manga-title.manga-title.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "p1gky6n4ku2ny76y02znk5ro",
+      "action": "api::team-member.team-member.find",
+      "locale": null
+    },
+    {
+      "documentId": "q5dt8vp9337r7i7582jqpubx",
+      "action": "api::team-member.team-member.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "reaglbyl24f0gmd9aptn9bia",
+      "action": "plugin::comments.client.findAllFlat",
+      "locale": null
+    },
+    {
+      "documentId": "mbfrdc5ioplixijbt4ucarj9",
+      "action": "plugin::comments.client.findAllInHierarchy",
+      "locale": null
+    },
+    {
+      "documentId": "aat9q25eqe7hf6jvh27ota1v",
+      "action": "plugin::comments.client.post",
+      "locale": null
+    },
+    {
+      "documentId": "najd6picyfmgeueckpjff0fi",
+      "action": "plugin::comments.client.put",
+      "locale": null
+    },
+    {
+      "documentId": "xe9dids2l9dns8k62kl4153c",
+      "action": "plugin::comments.client.removeComment",
+      "locale": null
+    },
+    {
+      "documentId": "iniz42e5i6gdrbj9dooktlmj",
+      "action": "plugin::upload.content-api.find",
+      "locale": null
+    },
+    {
+      "documentId": "gdt2ryke1iuby684bj99s1bn",
+      "action": "plugin::upload.content-api.upload",
+      "locale": null
+    },
+    {
+      "documentId": "eox8yuzhcygtnxancdw60ofq",
+      "action": "plugin::users-permissions.auth.changePassword",
+      "locale": null
+    },
+    {
+      "documentId": "yuznxdwjamg3a5w1c40rs8b8",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    },
+    {
+      "documentId": "dku7xf2r26dknfnybudrxx57",
+      "action": "plugin::users-permissions.user.me",
+      "locale": null
+    },
+    {
+      "documentId": "nkpzpyrhf2kw7bjpkwsmm97e",
+      "action": "plugin::users-permissions.user.update",
+      "locale": null
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "documentId": "iwdrq7l22pxvovctpv4gpat5",
+  "name": "Author",
+  "code": "strapi-author",
+  "description": "Authors can manage the content they have created.",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "c2zdo6ugynlihygafs35mba0",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::author.author",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "photo",
+          "urls",
+          "manga_titles",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "uilikkhs6h3o1bu0wly2j7b3",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::author.author",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "pfdg3765t5rpccgopdky4uue",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::author.author",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "photo",
+          "urls",
+          "manga_titles",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "lwhwtyy7512mtewbmfbxdegz",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::author.author",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "photo",
+          "urls",
+          "manga_titles",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "lclpvlsfgrh867m68ly80jnl",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::footer.footer",
+      "properties": {
+        "fields": [
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "telegram_url",
+          "warning",
+          "contact_email",
+          "contact_telegram_url"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "n9htsxyqzalj873j4hdc4btb",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::footer.footer",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "aophf0xkwd0igvzs4u7jynoi",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::footer.footer",
+      "properties": {
+        "fields": [
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "telegram_url",
+          "warning",
+          "contact_email",
+          "contact_telegram_url"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "kgit1l49ic01x10s4u9h7ube",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::footer.footer",
+      "properties": {
+        "fields": [
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "telegram_url",
+          "warning",
+          "contact_email",
+          "contact_telegram_url"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "xb49mjy3u2o3toci5257bqwu",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::manga-chapter.manga-chapter",
+      "properties": {
+        "fields": [
+          "name",
+          "number",
+          "title",
+          "pages",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "yuz0v48wamrvrax1kukndibi",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::manga-chapter.manga-chapter",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "pevrpceo4ohi15pbs1tjkmu7",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::manga-chapter.manga-chapter",
+      "properties": {
+        "fields": [
+          "name",
+          "number",
+          "title",
+          "pages",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "ycvqbtl1dp172zuuzn95kglk",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::manga-chapter.manga-chapter",
+      "properties": {
+        "fields": [
+          "name",
+          "number",
+          "title",
+          "pages",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "hay2pzeojpzd33jtt2g8vxq1",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::manga-page.manga-page",
+      "properties": {
+        "fields": [
+          "number",
+          "image",
+          "chapter",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "mo219etnlbb3md51ivah6g8d",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::manga-page.manga-page",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "guia8bklu80p1qyk4zjp2ftw",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::manga-page.manga-page",
+      "properties": {
+        "fields": [
+          "number",
+          "image",
+          "chapter",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "el8h5f8kk8mx57mzb7cmxwb6",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::manga-page.manga-page",
+      "properties": {
+        "fields": [
+          "number",
+          "image",
+          "chapter",
+          "hidden"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "deyo3k6boga3feq9o3vut3gn",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::manga-title.manga-title",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "release_year",
+          "authors",
+          "cover",
+          "backdrop",
+          "chapters",
+          "release_status",
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "hidden",
+          "slug",
+          "alternative_names",
+          "members_worked_ons"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "au9jw6l751fbgl03khtlbmz2",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::manga-title.manga-title",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "e4vu8go631luba21lexoh3td",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::manga-title.manga-title",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "release_year",
+          "authors",
+          "cover",
+          "backdrop",
+          "chapters",
+          "release_status",
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "hidden",
+          "slug",
+          "alternative_names",
+          "members_worked_ons"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "q7tor7hf5p8vhb6a6vlj5c14",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::manga-title.manga-title",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "release_year",
+          "authors",
+          "cover",
+          "backdrop",
+          "chapters",
+          "release_status",
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "hidden",
+          "slug",
+          "alternative_names",
+          "members_worked_ons"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "bk69qdk1zruiky7dzu72d9lm",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::team-member.team-member",
+      "properties": {
+        "fields": [
+          "nickname",
+          "role",
+          "image",
+          "telegram_url",
+          "email",
+          "hidden",
+          "manga_titles"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "ac5srhdva7h5ekx91uzb948c",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "api::team-member.team-member",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "vum8pokqyo972v9xdu2h6fh8",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::team-member.team-member",
+      "properties": {
+        "fields": [
+          "nickname",
+          "role",
+          "image",
+          "telegram_url",
+          "email",
+          "hidden",
+          "manga_titles"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "v695zy7p6i8u2lql0s6zt16e",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::team-member.team-member",
+      "properties": {
+        "fields": [
+          "nickname",
+          "role",
+          "image",
+          "telegram_url",
+          "email",
+          "hidden",
+          "manga_titles"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "euyjhsflxldgmjarru34ki5s",
+      "action": "plugin::upload.assets.copy-link",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "rk9bx8v62f5xko03eokmm1so",
+      "action": "plugin::upload.assets.create",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "ldy01b1qqm4u54nxuuhtt29u",
+      "action": "plugin::upload.assets.download",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "wfd6iw0x5tfr8u211du1ujlj",
+      "action": "plugin::upload.assets.update",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    },
+    {
+      "documentId": "rezir17ylwvu798zfepcmmlm",
+      "action": "plugin::upload.configure-view",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "fet5rtg80occi9upbcxbibi0",
+      "action": "plugin::upload.read",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ],
+      "locale": null
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "key": "plugin_comments_config",
+  "value": {
+    "enabledCollections": [
+      "api::article.article",
+      "api::manga-title.manga-title",
+      "api::manga-page.manga-page",
+      "api::book-title.book-title",
+      "api::book-chapter.book-chapter"
+    ],
+    "moderatorRoles": [],
+    "approvalFlow": [],
+    "entryLabel": {
+      "*": [
+        "Title",
+        "title",
+        "Name",
+        "name",
+        "Subject",
+        "subject"
+      ]
+    },
+    "badWords": true,
+    "blockedAuthorProps": [
+      ""
+    ],
+    "client": {
+      "url": null,
+      "contactEmail": null
+    },
+    "reportReasons": {
+      "BAD_LANGUAGE": "BAD_LANGUAGE",
+      "DISCRIMINATION": "DISCRIMINATION",
+      "OTHER": "OTHER"
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

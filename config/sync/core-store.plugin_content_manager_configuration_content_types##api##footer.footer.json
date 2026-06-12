@@ -1,0 +1,238 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::footer.footer",
+  "value": {
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "mangalib_url",
+      "defaultSortBy": "mangalib_url",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "mangalib_url": {
+        "edit": {
+          "label": "mangalib_url",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "mangalib_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "remanga_url": {
+        "edit": {
+          "label": "remanga_url",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "remanga_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "readmanga_url": {
+        "edit": {
+          "label": "readmanga_url",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "readmanga_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "telegram_url": {
+        "edit": {
+          "label": "telegram_url",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "telegram_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "warning": {
+        "edit": {
+          "label": "warning",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "warning",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "contact_email": {
+        "edit": {
+          "label": "contact_email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "contact_email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "contact_telegram_url": {
+        "edit": {
+          "label": "contact_telegram_url",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "contact_telegram_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdBy": {
+        "edit": {
+          "label": "createdBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "createdBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedBy": {
+        "edit": {
+          "label": "updatedBy",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true,
+          "mainField": "firstname"
+        },
+        "list": {
+          "label": "updatedBy",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "documentId": {
+        "edit": {},
+        "list": {
+          "label": "documentId",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "mangalib_url",
+        "remanga_url",
+        "readmanga_url"
+      ],
+      "edit": [
+        [
+          {
+            "name": "mangalib_url",
+            "size": 6
+          },
+          {
+            "name": "remanga_url",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "readmanga_url",
+            "size": 6
+          },
+          {
+            "name": "telegram_url",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "warning",
+            "size": 6
+          },
+          {
+            "name": "contact_email",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "contact_telegram_url",
+            "size": 6
+          }
+        ]
+      ]
+    },
+    "uid": "api::footer.footer"
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

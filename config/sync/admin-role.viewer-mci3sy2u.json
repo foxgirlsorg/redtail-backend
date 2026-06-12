@@ -1,0 +1,146 @@
+{
+  "documentId": "bsj1wj2iny32exq69yjnfk66",
+  "name": "Viewer",
+  "code": "viewer-mci3sy2u",
+  "description": "Created June 29th, 2025",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "sfyialq8n5wgxmjyph3nfjfx",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::author.author",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "photo",
+          "urls",
+          "manga_titles",
+          "hidden"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "k2d3q0rkr48dji0nllvq4ahg",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::footer.footer",
+      "properties": {
+        "fields": [
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "telegram_url",
+          "warning",
+          "contact_email",
+          "contact_telegram_url"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "gh1dd5wzt8e7om07cgukvbhg",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::manga-chapter.manga-chapter",
+      "properties": {
+        "fields": [
+          "name",
+          "number",
+          "title",
+          "pages",
+          "hidden"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "pcc321uystn9ekqbiblppm8r",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::manga-page.manga-page",
+      "properties": {
+        "fields": [
+          "number",
+          "image",
+          "chapter",
+          "hidden"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "c4gbjfypye4jc6dmq0gh8rrq",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::manga-title.manga-title",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "release_year",
+          "authors",
+          "cover",
+          "backdrop",
+          "chapters",
+          "release_status",
+          "mangalib_url",
+          "remanga_url",
+          "readmanga_url",
+          "hidden",
+          "slug",
+          "alternative_names",
+          "members_worked_ons"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "wjk5jv7j6w5fycvv7ataueq9",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::team-member.team-member",
+      "properties": {
+        "fields": [
+          "nickname",
+          "role",
+          "image",
+          "telegram_url",
+          "email",
+          "hidden",
+          "manga_titles"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "mqwwjj2cxga23gks9jkfs5uy",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "plugin::users-permissions.user",
+      "properties": {
+        "fields": [
+          "username",
+          "email",
+          "provider",
+          "password",
+          "resetPasswordToken",
+          "confirmationToken",
+          "confirmed",
+          "blocked",
+          "role"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    }
+  ]
+}

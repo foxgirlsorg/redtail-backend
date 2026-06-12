@@ -1,0 +1,164 @@
+{
+  "documentId": "eg7im9zagmyan9mpozu7r7kk",
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "jorzruhj804ah3rb0apkpb4k",
+      "action": "api::article.article.find",
+      "locale": null
+    },
+    {
+      "documentId": "chzko7oai9f3t72jmoa6546s",
+      "action": "api::article.article.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "o0nvfjhioy6x51qw2631vvxs",
+      "action": "api::author.author.find",
+      "locale": null
+    },
+    {
+      "documentId": "cx6rdp2okzhwfu7r3ctc5hn7",
+      "action": "api::author.author.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "ec5afbeij8s8vf8x1ejax0x9",
+      "action": "api::book-chapter.book-chapter.find",
+      "locale": null
+    },
+    {
+      "documentId": "u4kk2h6n06w3z94p0zgrbl1u",
+      "action": "api::book-chapter.book-chapter.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "tpm3x7q1ic8zlo9jvy6xo03c",
+      "action": "api::book-files.book-files.find",
+      "locale": null
+    },
+    {
+      "documentId": "ejkqun08g3e38jg8289bwjap",
+      "action": "api::book-files.book-files.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "oozx8vmybpvov0v2btokpngb",
+      "action": "api::book-title.book-title.find",
+      "locale": null
+    },
+    {
+      "documentId": "jl63i00ih7ls8nl38xlpkhjg",
+      "action": "api::book-title.book-title.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "i91rgz8lc6mjqzi82wbw15yg",
+      "action": "api::footer.footer.find",
+      "locale": null
+    },
+    {
+      "documentId": "t0uyh25385pwdnsr5kxttlvs",
+      "action": "api::manga-chapter.manga-chapter.find",
+      "locale": null
+    },
+    {
+      "documentId": "xs42hvjezn2bb64c5mm07dml",
+      "action": "api::manga-chapter.manga-chapter.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "dqw3oky07ppf0alnv6bh4vty",
+      "action": "api::manga-page.manga-page.find",
+      "locale": null
+    },
+    {
+      "documentId": "o6k8teefu37tpv3lt3odrrtk",
+      "action": "api::manga-page.manga-page.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "vbv3q8vmiiesw9h4xgnmy4wu",
+      "action": "api::manga-title.manga-title.find",
+      "locale": null
+    },
+    {
+      "documentId": "ogsft4nsbfclyvyq41sjutfc",
+      "action": "api::manga-title.manga-title.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "c0cfp5d0w9d3amlwq7mhyucz",
+      "action": "api::team-member.team-member.find",
+      "locale": null
+    },
+    {
+      "documentId": "our34igc25mhk5iiam1ldhjj",
+      "action": "api::team-member.team-member.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "ja546hw6s6sh57x8u08tac8r",
+      "action": "plugin::comments.client.findAllFlat",
+      "locale": null
+    },
+    {
+      "documentId": "ce98dfxr9f6ybzjewgii1iez",
+      "action": "plugin::comments.client.findAllInHierarchy",
+      "locale": null
+    },
+    {
+      "documentId": "x28oomzj04ws50540tlgj820",
+      "action": "plugin::upload.content-api.find",
+      "locale": null
+    },
+    {
+      "documentId": "aaofo74v8ts5f6z2hlj97flt",
+      "action": "plugin::upload.content-api.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "ugwfymjf010gdajdopwqjtu8",
+      "action": "plugin::users-permissions.auth.callback",
+      "locale": null
+    },
+    {
+      "documentId": "kfedg7qpihsvhgr2hu1guixn",
+      "action": "plugin::users-permissions.auth.connect",
+      "locale": null
+    },
+    {
+      "documentId": "qs3qfrf37b79k0bmbehkb7b5",
+      "action": "plugin::users-permissions.auth.emailConfirmation",
+      "locale": null
+    },
+    {
+      "documentId": "fydyzp9r25olr9z6a0up8yly",
+      "action": "plugin::users-permissions.auth.forgotPassword",
+      "locale": null
+    },
+    {
+      "documentId": "u8yauwlncl4lh7o6aqqidqr3",
+      "action": "plugin::users-permissions.auth.register",
+      "locale": null
+    },
+    {
+      "documentId": "c13i9y24m84fw6onax8v96ov",
+      "action": "plugin::users-permissions.auth.resetPassword",
+      "locale": null
+    },
+    {
+      "documentId": "asnq27jq9pb6nj4ux65ld8fr",
+      "action": "plugin::users-permissions.auth.sendEmailConfirmation",
+      "locale": null
+    },
+    {
+      "documentId": "d1k14ylvi5gkbbnnlab9mro3",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    }
+  ]
+}
