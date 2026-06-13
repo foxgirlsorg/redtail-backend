@@ -15,6 +15,41 @@ The frontend is maintained in a separate repository: [foxgirlsorg/redtail-fronte
 * **Runtime:** Node.js 20 (Alpine)
 * **Containerization:** Docker + Docker Compose
 
+## 🔌 Plugins
+
+| Plugin | Package | Purpose |
+|---|---|---|
+| Comments | `strapi-plugin-comments` | Nested, rated comments on articles, manga, and books |
+| Config Sync | `strapi-plugin-config-sync` | Version-controls Strapi config as JSON files under `config/sync/` |
+| Users & Permissions | `@strapi/plugin-users-permissions` | User auth, roles, OAuth callbacks, password reset |
+| Email (Nodemailer) | `@strapi/provider-email-nodemailer` | Transactional email via SMTP |
+
+### Comments
+
+Comments are enabled on the following collections:
+
+* `api::article.article`
+* `api::manga-title.manga-title`
+* `api::manga-page.manga-page`
+* `api::book-title.book-title`
+* `api::book-chapter.book-chapter`
+
+Nesting is enabled. Bad-word filtering is disabled by default.
+
+### Config Sync
+
+All Strapi configuration (roles, permissions, content-type layouts, plugin settings) is exported as JSON under `config/sync/`. This means config changes made in the admin panel can be committed to version control and reliably reproduced across environments by running:
+
+```bash
+yarn strapi config-sync import
+```
+
+After making config changes in the admin, export them with:
+
+```bash
+yarn strapi config-sync export
+```
+
 ## 🚀 Local Development
 
 ### Prerequisites
@@ -37,22 +72,12 @@ The frontend is maintained in a separate repository: [foxgirlsorg/redtail-fronte
 
 3. **Configure environment variables**
 
-   Create a `.env` file at the project root:
-   ```env
-   HOST=0.0.0.0
-   PORT=1337
-   APP_KEYS=your,app,keys,here
-   API_TOKEN_SALT=your_api_token_salt
-   ADMIN_JWT_SECRET=your_admin_jwt_secret
-   JWT_SECRET=your_jwt_secret
-   TRANSFER_TOKEN_SALT=your_transfer_token_salt
-   ENCRYPTION_KEY=your_encryption_key
-   NODE_ENV=development
-
-   # Database
-   DATABASE_CLIENT=sqlite
-   DATABASE_FILENAME=.tmp/data.db
+   Copy the example file and fill in the values:
+   ```bash
+   cp .env.example .env
    ```
+
+   See the [Environment Variables](#️-environment-variables) section for a full reference.
 
 4. **Start the development server**
    ```bash
@@ -63,19 +88,6 @@ The frontend is maintained in a separate repository: [foxgirlsorg/redtail-fronte
 ## 🐳 Docker
 
 The repository includes separate Dockerfiles for development and production, and a `docker-compose.yml` that runs the Strapi app alongside a MariaDB database.
-
-### Environment variables for Docker
-
-Add the following to your `.env` alongside the Strapi secrets above:
-
-```env
-DATABASE_CLIENT=mysql
-DATABASE_HOST=foxgirlsorg-mangaDB
-DATABASE_PORT=3306
-DATABASE_NAME=redtail
-DATABASE_USERNAME=strapi
-DATABASE_PASSWORD=your_db_password
-```
 
 ### Development container
 
@@ -105,21 +117,77 @@ yarn build
 yarn start
 ```
 
+## ⚙️ Environment Variables
+
+Copy `.env.example` to `.env` and fill in all values before starting the server. Never commit `.env` to version control.
+
+### Server
+
+| Variable | Default | Description |
+|---|---|---|
+| `HOST` | `0.0.0.0` | Address the server binds to |
+| `PORT` | `1337` | Port the server listens on |
+| `NODE_ENV` | `production` | `development` or `production` |
+| `PUBLIC_URL` | `https://redtail.foxgirls.org` | Public-facing URL (used for OAuth callbacks and password-reset links) |
+
+### Strapi Secrets
+
+Generate secure random values for all of these. They must be consistent across restarts — changing them will invalidate existing sessions and tokens.
+
+| Variable | Description |
+|---|---|
+| `APP_KEYS` | Comma-separated list of session keys |
+| `API_TOKEN_SALT` | Salt for API token hashing |
+| `ADMIN_JWT_SECRET` | JWT secret for admin panel sessions |
+| `JWT_SECRET` | JWT secret for users-permissions tokens |
+| `TRANSFER_TOKEN_SALT` | Salt for data-transfer tokens |
+| `ENCRYPTION_KEY` | Encryption key for sensitive data |
+
+### SMTP (Email)
+
+Used by Nodemailer for transactional email (password resets, etc.).
+
+| Variable | Default | Description |
+|---|---|---|
+| `SMTP_HOST` | — | SMTP server hostname |
+| `SMTP_PORT` | `465` | SMTP port |
+| `SMTP_SECURE` | `true` | Use TLS (`true` for port 465, `false` for STARTTLS on 587) |
+| `SMTP_USERNAME` | — | SMTP auth username |
+| `SMTP_PASSWORD` | — | SMTP auth password |
+| `SMTP_FROM` | — | Sender address (e.g. `no-reply@foxgirls.org`) |
+| `SMTP_FROM_NAME` | `RedTail` | Display name shown in the From field |
+
+### Database
+
+| Variable | Default | Description |
+|---|---|---|
+| `DATABASE_CLIENT` | `sqlite` | `mysql`, `postgres`, or `sqlite` |
+| `DATABASE_HOST` | `localhost` | DB host (Docker: `foxgirlsorg-mangaDB`) |
+| `DATABASE_PORT` | `3306` | DB port |
+| `DATABASE_NAME` | `strapi` | Database name |
+| `DATABASE_USERNAME` | `strapi` | DB username |
+| `DATABASE_PASSWORD` | — | DB password |
+| `DATABASE_SSL` | `false` | Enable SSL for the DB connection |
+| `DATABASE_FILENAME` | `.tmp/data.db` | SQLite file path (only used when `DATABASE_CLIENT=sqlite`) |
+
 ## 📋 Content Types
 
-| Collection | Kind | Description |
+| Collection | Kind | Key fields |
 |---|---|---|
-| `manga-titles` | Collection | Manga with cover, backdrop, authors, chapters, external links |
-| `book-titles` | Collection | Books / light novels / short stories |
-| `manga-chapters` | Collection | Chapters belonging to a manga title, with pages |
-| `manga-pages` | Collection | Individual pages (image + order number) |
-| `book-chapters` | Collection | Chapters with Markdown `content` field |
-| `authors` | Collection | External authors linked to titles and articles |
-| `articles` | Collection | Markdown articles with authors, related authors, and source URL |
-| `team-members` | Collection | RedTail team members with role, avatar, and social links |
-| `footer` | Single Type | Site-wide footer links and disclaimer text |
+| `manga-titles` | Collection | Name, slug, type (Манга/Манхва/Маньхуа/Комикс), cover, backdrop, release status, authors, chapters, team members, external links (MangaLib, ReManga, ReadManga, Senkuro) |
+| `manga-chapters` | Collection | Belongs to a manga title, contains manga pages |
+| `manga-pages` | Collection | Individual page image + order number, belongs to a chapter |
+| `book-titles` | Collection | Name, slug, type (Книга/Ранобэ/Рассказ), cover, backdrop, release status, authors, chapters, book files, team members |
+| `book-chapters` | Collection | Rich-text `content` field, belongs to a book title |
+| `book-files` | Collection | Downloadable files (e.g. EPUB/PDF) attached to a book title, with a `file_type` label and a `hidden` flag |
+| `authors` | Collection | External authors linked to manga titles, book titles, and articles; includes photo and social URLs (JSON) |
+| `articles` | Collection | Rich-text articles with slug, description, card background, source URL, authors, related authors, and team members |
+| `team-members` | Collection | Nickname, role, avatar, Telegram URL, email; linked to manga titles, book titles, and articles |
+| `footer` | Single Type | Platform links (MangaLib, ReManga, ReadManga, Telegram), contact email, contact Telegram, and a warning/disclaimer string |
 
-## ⚙️ API Limits
+## 🗺️ REST API pagination defaults
+
+These are set in `config/api.ts` and apply to all collection endpoints unless overridden per-request with `?pagination[pageSize]=N`.
 
 | Setting | Value |
 |---|---|
