@@ -22,7 +22,7 @@
     },
     "badWords": true,
     "blockedAuthorProps": [
-      ""
+      "email"
     ],
     "client": {
       "url": null,

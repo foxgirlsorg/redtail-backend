@@ -34,7 +34,7 @@ Comments are enabled on the following collections:
 * `api::book-title.book-title`
 * `api::book-chapter.book-chapter`
 
-Nesting is enabled. Bad-word filtering is disabled by default.
+Nesting is enabled. Bad-word filtering is disabled in the plugin config — filtering is handled by a custom middleware instead (see below).
 
 ### Config Sync
 
@@ -48,6 +48,27 @@ After making config changes in the admin, export them with:
 
 ```bash
 yarn strapi config-sync export
+```
+
+## 🛡️ Custom Middlewares
+
+### `block-comment-words`
+
+Blocks comments containing configured words on `POST`, `PUT`, and `PATCH` requests to comment routes. Returns a `400 BadRequestError` if a match is found. Admin routes are not affected.
+
+Words are matched as **whole tokens** — punctuation and whitespace are treated as word boundaries, so partial matches inside longer words are not triggered (e.g. `tester` does not match `test`).
+
+A normalizer maps visually similar characters to a canonical latin equivalent before matching, so mixed latin/cyrillic spellings and common character substitutions (`0→o`, `3→з`, etc.) are caught without needing to enumerate every variant.
+
+The middleware is injected into the comments plugin routes via `src/extensions/comments/strapi-server.ts` and configured in `config/middlewares.ts`:
+
+```ts
+{
+  name: 'global::block-comment-words',
+  config: {
+    blockedWords: ['слово', 'word', ...],
+  },
+}
 ```
 
 ## 🚀 Local Development
@@ -107,6 +128,7 @@ docker compose up -d
 ```
 
 Strapi will be available at `http://localhost:1337`. Media uploads are persisted via the `./public/uploads` volume mount.
+
 
 ## 📦 Building & Deployment
 
