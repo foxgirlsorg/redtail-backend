@@ -30,8 +30,8 @@ export default ({ env }: { env: any }) => ({
                 'api::book-chapter.book-chapter',
             ],
             nestingEnabled: true,
-            ratingsEnabled: true,
             badWords: false,
+	    blockedAuthorProps: ["email"],
         },
     },
 
