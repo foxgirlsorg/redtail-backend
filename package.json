@@ -23,7 +23,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "strapi-plugin-comments": "^3.2.4",
+    "strapi-plugin-comments": "https://github.com/foxgirlsorg/strapi-plugin-comments/releases/download/v1/strapi-plugin-comments-v3.2.5-beta.1.tgz",
     "strapi-plugin-config-sync": "^3.2.0",
     "styled-components": "^6.0.0"
   },
