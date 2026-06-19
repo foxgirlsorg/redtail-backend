@@ -7,7 +7,7 @@
       "searchable": true,
       "pageSize": 10,
       "relationOpenMode": "modal",
-      "mainField": "blockReason",
+      "mainField": "authorName",
       "defaultSortBy": "blockReason",
       "defaultSortOrder": "ASC"
     },
@@ -301,18 +301,19 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "content",
-        "blocked",
-        "blockedThread"
-      ],
       "edit": [
+        [],
+        [],
+        [],
+        [],
+        [],
         [
           {
             "name": "content",
             "size": 6
-          },
+          }
+        ],
+        [
           {
             "name": "blocked",
             "size": 4
@@ -320,39 +321,11 @@
         ],
         [
           {
-            "name": "blockedThread",
-            "size": 4
-          },
-          {
-            "name": "blockReason",
-            "size": 6
-          }
-        ],
-        [
-          {
             "name": "authorUser",
             "size": 6
-          },
-          {
-            "name": "authorId",
-            "size": 6
           }
         ],
         [
-          {
-            "name": "authorName",
-            "size": 6
-          },
-          {
-            "name": "authorEmail",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "authorAvatar",
-            "size": 6
-          },
           {
             "name": "isAdminComment",
             "size": 4
@@ -362,28 +335,21 @@
           {
             "name": "removed",
             "size": 4
-          },
-          {
-            "name": "approvalStatus",
-            "size": 6
           }
         ],
+        [],
         [
           {
-            "name": "related",
-            "size": 6
-          },
-          {
-            "name": "reports",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "threadOf",
+            "name": "authorName",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "content",
+        "blocked",
+        "blockedThread"
       ]
     },
     "uid": "plugin::comments.comment"

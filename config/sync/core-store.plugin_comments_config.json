@@ -18,9 +18,11 @@
         "name",
         "Subject",
         "subject"
-      ]
+      ],
+      "api::manga-title.manga-title": []
     },
     "badWords": true,
+    "sanitizeComments": false,
     "blockedAuthorProps": [
       "email"
     ],

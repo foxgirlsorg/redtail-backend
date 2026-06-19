@@ -1185,6 +1185,105 @@
       "locale": null
     },
     {
+      "documentId": "gjyxacedpyiso470gyqrwb9n",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "plugin::comments.comment",
+      "properties": {
+        "fields": [
+          "content",
+          "blocked",
+          "blockedThread",
+          "blockReason",
+          "authorUser",
+          "authorId",
+          "authorName",
+          "authorEmail",
+          "authorAvatar",
+          "isAdminComment",
+          "removed",
+          "approvalStatus",
+          "related",
+          "reports",
+          "threadOf"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "lxhbpc16l3ah566dq0ulpfxo",
+      "action": "plugin::content-manager.explorer.delete",
+      "actionParameters": {},
+      "subject": "plugin::comments.comment",
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "yokjnt5a1kllolpiuldbj7x0",
+      "action": "plugin::content-manager.explorer.publish",
+      "actionParameters": {},
+      "subject": "plugin::comments.comment",
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "s4fqvcw9chn663vtnlpisyqn",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "plugin::comments.comment",
+      "properties": {
+        "fields": [
+          "content",
+          "blocked",
+          "blockedThread",
+          "blockReason",
+          "authorUser",
+          "authorId",
+          "authorName",
+          "authorEmail",
+          "authorAvatar",
+          "isAdminComment",
+          "removed",
+          "approvalStatus",
+          "related",
+          "reports",
+          "threadOf"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "ey6dmtm75m2txyw3vs6jl4s2",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "plugin::comments.comment",
+      "properties": {
+        "fields": [
+          "content",
+          "blocked",
+          "blockedThread",
+          "blockReason",
+          "authorUser",
+          "authorId",
+          "authorName",
+          "authorEmail",
+          "authorAvatar",
+          "isAdminComment",
+          "removed",
+          "approvalStatus",
+          "related",
+          "reports",
+          "threadOf"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
       "documentId": "gebjce3sp5gw1a8lobcrz9j3",
       "action": "plugin::content-manager.explorer.create",
       "actionParameters": {},
